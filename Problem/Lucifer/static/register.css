@@ -1,0 +1,45 @@
+/* Container styling */
+.container {
+    width: 80%; /* Makes the container wider instead of tall */
+    max-width: 1000px; /* Restricts the maximum width */
+    margin: 50px auto; /* Centers the container horizontally */
+    padding: 20px; /* Adds spacing inside the container */
+    background: #f9f9f9; /* Light background color */
+    border-radius: 12px; /* Rounds the corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+/* Heading styling */
+.container h1 {
+    text-align: center; /* Centers the heading */
+    color: #333; /* Dark gray text color */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+/* Input box styling */
+input[type="text"],
+textarea {
+    width: 100%; /* Full width input */
+    padding: 10px; /* Inner spacing */
+    margin: 10px 0; /* Space between fields */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 8px; /* Rounded edges */
+    font-size: 16px; /* Increases readability */
+}
+
+/* Button styling */
+button {
+    width: 100%; /* Full width button */
+    padding: 12px; /* Inner spacing */
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border: none; /* Removes default border */
+    border-radius: 8px; /* Rounded button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Slightly bigger text */
+    transition: 0.3s ease; /* Smooth hover effect */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

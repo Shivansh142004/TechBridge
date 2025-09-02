@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Tweet</title>
+    <link rel="stylesheet" href="{% static 'color.css' %}">
+</head>
+<body>
+    <div class="delete-container">
+        <h1 class="delete-title">Are you sure you want to delete the tweet?</h1>
+
+        <form method="POST" class="delete-form">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a href="{% url 'tweet_list' %}" class="btn btn-cancel">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

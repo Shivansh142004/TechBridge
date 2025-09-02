@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %} TechBridge - Tweet {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'tweetcreate.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">
+            {% if form.instance.pk %} ✏️ Edit Tweet {% else %} 📝 Create Tweet {% endif %}
+        </h1>
+
+        <form method="post" enctype="multipart/form-data" class="tweet-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn-submit" type="submit">Submit</button>
+        </form>
+
+        <a href="{% url 'tweet_list' %}" class="btn-back">⬅ Back To List</a>
+    </div>
+</body>
+</html>

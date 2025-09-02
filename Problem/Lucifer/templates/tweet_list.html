@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechBridge - Tweet List</title>
+    <link rel="stylesheet" href="{% static 'tweetList.css' %}">
+</head>
+<body>
+    <!-- ===== Header / Navbar ===== -->
+    <div class="header">
+        <h1>Tweet List</h1>
+        <div class="nav-links">
+            <a class="nav-btn" href="{% url 'tweet_create' %}">+ Create New Tweet</a>
+            <a class="nav-btn" href="{% url 'index' %}">Home</a>
+            <a class="nav-btn" href="{% url 'logout' %}">Logout</a>
+        </div>
+    </div>
+
+    <!-- ===== Tweets List ===== -->
+    <div class="container row gap-3 mt-3">
+        {% for tweet in tweets %}
+            <div class="card">
+                {% if tweet.photo %}
+                    <img src="{{ tweet.photo.url }}" class="card-img-top" alt="Tweet Image">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ tweet.user.username }}</h5>
+                    <p class="card-text">{{ tweet.text }}</p>
+                    {% if tweet.user == user %}
+                        <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger">Delete</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% empty %}
+            <p>No tweets yet.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

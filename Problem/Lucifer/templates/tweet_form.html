@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block tittle %}
+TechBridge
+{% endblock %}
+
+{% block content %}
+<h1>Tweet List</h1>
+
+<h2> 
+    {% if form.instance.pk %} Edit Tweet {% else %} Create Tweet {% endif %}
+    <form method="post" enctype="multipart/form-data" class="form">
+        {{form.as_p}}
+    </form>
+</h2>
+{% endblock %}
