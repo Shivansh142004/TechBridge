@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TechBridge - Connect Ideas to Developers</title>
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">TechBridge</div>
+            <ul>
+                <li><a href="{% url 'tweet_list' %}">View List</a></li>
+                <li><a href="{% url 'register' %}">Singup</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-section">
+            <h1 class="fade-in">Bridge Between <span>Ideas</span> & <span>Developers</span></h1>
+            <p class="fade-in delay">Share your tech problem — let developers solve it or build new tools just for you!</p>
+            <a href="{% url 'tweet_create' %}" class="cta-button fade-in delay2"> Share your idea </a>
+            
+        </div>
+    </header>
+</body>
+</html>
